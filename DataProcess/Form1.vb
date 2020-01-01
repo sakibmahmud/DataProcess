@@ -126,7 +126,7 @@ Public Class Form1
             con.Open()
 
             Dim myTableName = con.GetSchema("Tables").Rows(0)("TABLE_NAME")
-            cmnd2.CommandText = String.Format("SELECT  DISTINCT RA FROM [{0}] WHERE curr_crop = '" & Form1.current_crop & "' AND prev_crop ='Wht-HRS' AND year BETWEEN " & Form1.y & " AND " & 2018 & " AND RA BETWEEN " & Form1.ra & " AND " & 22, myTableName)
+            cmnd2.CommandText = String.Format("SELECT DISTINCT RA FROM [{0}] WHERE curr_crop = '" & Form1.current_crop & "' AND prev_crop ='Wht-HRS' AND year BETWEEN " & Form1.y & " AND " & 2018 & " AND RA BETWEEN " & Form1.ra & " AND " & 22, myTableName)
             cmnd2.Connection = con
             Dim dr = cmnd2.ExecuteReader()
 
@@ -146,7 +146,9 @@ Public Class Form1
                         cmnd.Connection = con
                         n = cmnd.ExecuteScalar()
                         If n = 0 Then
-                            GoTo out_for
+                            ' GoTo out_for
+                            Continue For
+
                         End If
 
                         Dim sqlquery1 As String = String.Format("SELECT RA, year,prev_crop,curr_crop, ave_yld, [{0}].ave_yld/" & n & " AS relative_yld FROM [{0}] WHERE RA=" & Form1.ra & " AND year = " & i & " AND [{0}].ave_yld IN (SELECT [{0}].ave_yld FROM [{0}] WHERE curr_crop='" & Form1.current_crop & "' AND year=" & i & " AND RA=" & Form1.ra & " AND prev_code <17) ORDER BY curr_crop, year", myTableName)
@@ -157,7 +159,7 @@ Public Class Form1
 
 
                     Next
-out_for:
+                    'out_for:
 
                     'MsgBox("ok")
                     If rowColumn.Tables.Count > 0 Then
