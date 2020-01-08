@@ -34,6 +34,7 @@ Partial Class Form1
         Me.Button2 = New System.Windows.Forms.Button()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.BackgroundWorker2 = New System.ComponentModel.BackgroundWorker()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -141,6 +142,11 @@ Partial Class Form1
         Me.ProgressBar1.Size = New System.Drawing.Size(585, 36)
         Me.ProgressBar1.TabIndex = 9
         '
+        'BackgroundWorker2
+        '
+        Me.BackgroundWorker2.WorkerReportsProgress = True
+        Me.BackgroundWorker2.WorkerSupportsCancellation = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -174,5 +180,6 @@ Partial Class Form1
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents ProgressBar1 As System.Windows.Forms.ProgressBar
+    Public WithEvents BackgroundWorker2 As System.ComponentModel.BackgroundWorker
 
 End Class

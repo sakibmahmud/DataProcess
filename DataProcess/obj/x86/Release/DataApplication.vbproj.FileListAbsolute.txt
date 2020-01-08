@@ -1,0 +1,16 @@
+\\Mac\Home\Documents\DataProcess\DataProcess\bin\Release\DataApplication.exe.manifest
+\\Mac\Home\Documents\DataProcess\DataProcess\bin\Release\DataApplication.application
+\\Mac\Home\Documents\DataProcess\DataProcess\bin\Release\DataApplication.exe
+\\Mac\Home\Documents\DataProcess\DataProcess\bin\Release\DataApplication.pdb
+\\Mac\Home\Documents\DataProcess\DataProcess\bin\Release\DataApplication.xml
+\\Mac\Home\Documents\DataProcess\DataProcess\obj\x86\Release\Interop.MSDAOSP.dll
+\\Mac\Home\Documents\DataProcess\DataProcess\obj\x86\Release\Interop.MSDASC.dll
+\\Mac\Home\Documents\DataProcess\DataProcess\obj\x86\Release\DataApplication.vbproj.ResolveComReference.cache
+\\Mac\Home\Documents\DataProcess\DataProcess\obj\x86\Release\DataApplication.Form1.resources
+\\Mac\Home\Documents\DataProcess\DataProcess\obj\x86\Release\DataApplication.Resources.resources
+\\Mac\Home\Documents\DataProcess\DataProcess\obj\x86\Release\DataApplication.vbproj.GenerateResource.Cache
+\\Mac\Home\Documents\DataProcess\DataProcess\obj\x86\Release\DataApplication.exe.manifest
+\\Mac\Home\Documents\DataProcess\DataProcess\obj\x86\Release\DataApplication.application
+\\Mac\Home\Documents\DataProcess\DataProcess\obj\x86\Release\DataApplication.exe
+\\Mac\Home\Documents\DataProcess\DataProcess\obj\x86\Release\DataApplication.xml
+\\Mac\Home\Documents\DataProcess\DataProcess\obj\x86\Release\DataApplication.pdb
