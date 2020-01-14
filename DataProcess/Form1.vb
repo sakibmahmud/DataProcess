@@ -23,15 +23,14 @@ Public Class Form1
 
     Private Property dt As New DataTable
     Private Property ra As Integer
-   
 
     Private Property y As Integer
 
     Private Property columnList As New List(Of String)
 
-    ' Private Property _excel As New Excel.Application
+    'Private Property _excel As New Excel.Application
 
-    ' Private Property wbook As Excel.Workbook
+    'Private Property wbook As Excel.Workbook
 
 
    
@@ -285,9 +284,7 @@ Public Class Form1
         BackgroundWorker1.ReportProgress(80)
 
         Dim strFileName As String = crop_name & ".xlsx"
-        If System.IO.File.Exists(strFileName) Then
-            System.IO.File.Delete(strFileName)
-        End If
+      
         'BackgroundWorker1.ReportProgress(100)
         wbook.SaveAs(strFileName)
         wbook.Close()
@@ -298,6 +295,7 @@ Public Class Form1
         GC.Collect()
         GC.WaitForPendingFinalizers()
         areas.Clear()
+        columnList.Clear()
         BackgroundWorker1.ReportProgress(100)
 
 
@@ -444,8 +442,8 @@ Public Class Form1
         columnList.Add("Wheat-SWS")
         columnList.Add("Mustard-Ye")
         columnList.Add("Wht-HRS")
+
         Dim _excel As New Excel.Application
-      
         If _excel Is Nothing Then
             MsgBox("Excel is not installed properly")
         End If
