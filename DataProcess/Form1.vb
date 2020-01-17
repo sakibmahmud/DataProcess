@@ -85,13 +85,13 @@ Public Class Form1
 
         Else
 
-            If Integer.TryParse(TextBox1.Text, vbNull) And Integer.TryParse(TextBox2.Text, vbNull) And System.Text.RegularExpressions.Regex.IsMatch(TextBox3.Text, "^[A-Za-z]+$") Then
+            If Integer.TryParse(TextBox1.Text, vbNull) And Integer.TryParse(TextBox2.Text, vbNull) And System.Text.RegularExpressions.Regex.IsMatch(TextBox3.Text, "^[A-Za-z0-9!@#$%^&*()_+\-=\[\]{},':' ']+$") Then
 
                 ra = TextBox1.Text
                 y = TextBox2.Text
                 current_crop = TextBox3.Text
                 crop_name = current_crop
-                current_crop = TextBox3.Text.Substring(0, 1).ToUpper() + TextBox3.Text.Substring(1).ToLower()
+                'current_crop = TextBox3.Text.Substring(0, 1).ToUpper() + TextBox3.Text.Substring(1).ToLower()
                 'dt = ImportExcelToDataTable(System.IO.Path.GetFullPath(fpath))
                 BackgroundWorker2.RunWorkerAsync()
 
@@ -105,7 +105,7 @@ Public Class Form1
             Else
                 MsgBox("Please Enter Correct Value in Year, Risk Area and Crop")
 
-        End If
+            End If
 
 
 
@@ -164,22 +164,31 @@ Public Class Form1
 
     ' Outputting the result in a matrix format and exporting output excel files
     Private Sub BackgroundWorker1_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
-        MsgBox("Hello from Test")
+        ' MsgBox("Hello from Test")
         columnList.Add("Canola")
         columnList.Add("Barley")
         columnList.Add("Oats")
         columnList.Add("Rye-F")
         columnList.Add("Wht-HRW")
-        columnList.Add("Wht-DURUM")
+        columnList.Add("Wht-Durum")
         columnList.Add("Wheat-CPS")
+        columnList.Add("Wheat-ES")
+        columnList.Add("Wheat-SWS")
         columnList.Add("Flax")
         columnList.Add("Lentils")
         columnList.Add("Faba Bean")
-        columnList.Add("Pease,Field")
-        columnList.Add("Wheat-ES")
-        columnList.Add("Wheat-SWS")
+        columnList.Add("Peas,Field")
         columnList.Add("Mustard-Ye")
+        columnList.Add("Mustard-Br")
+        columnList.Add("Bean-Pinto")
+        columnList.Add("Bean-GrNor")
+        columnList.Add("Lentil-Grn")
+        columnList.Add("Lentil-Red")
+        columnList.Add("Alfalfa")
+        columnList.Add("Trit-S")
+        columnList.Add("Beans, Dry")
         columnList.Add("Wht-HRS")
+
         BackgroundWorker1.ReportProgress(5)
         Dim _excel As New Excel.Application
 
